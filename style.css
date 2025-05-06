@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0B0C10;
+  font-family: "Roboto Mono", monospace;
+}
+
+/* Header principal */
+#main-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 20px 0;
+  background: transparent;
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo do header */
+  font-weight: 900;
+}
+
+#main-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Agora também centraliza os links */
+  gap: 30px; /* Espaço entre os links */
+}
+
+/* Links de navegação */
+.nav-links {
+  display: flex;
+  gap: 100px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  transition: color 0.3s;
+}
+
+/* Efeito ao rolar */
+.scrolled {
+  background: rgba(11, 12, 16, 0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Seção Home */
+#home {
+  background-image: url('assets/362895.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column; /* Organiza conteúdo em coluna */
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  text-align: center;
+  position: relative;
+}
+
+#home .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 12, 16, 0.176) 0%,
+    rgba(11, 12, 16, 0.667) 50%,
+    rgba(11, 12, 16, 1) 100%
+  );
+}
+
+/* Título da Home */
+#home .title {
+  position: relative;
+  z-index: 1;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 15vh;
+}
+
+/* Slogan da Home */
+#home .slogan {
+  position: relative;
+  z-index: 1;
+  color: white;
+  font-family: "Roboto Mono", monospace;
+  font-weight: lighter;
+  font-style: italic;
+  font-size: 3vh; /* Tamanho menor para o slogan */
+  margin-top: 15px; /* Espaço entre título e slogan */
+  text-align: center;
+}
+
+#about {
+    background-color: #0B0C10;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.sobre {
+    display: flex;
+    width: 80%;
+    height: 80vh;
+    background: rgba(255, 255, 255, 0.057);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.8s ease;
+}
+
+.sobre h1{
+    margin-bottom: 4vh;
+    font-size: 28px;
+}
+
+.sobre p{
+    padding: 6%;
+    font-size: large;
+}
+
+.imagem-sobre {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    transition: all 0.8s ease;
+}
+
+.lado-direito {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.conteudo-inicial, .cards-equipe {
+    width: 100%;
+    transition: opacity 0.5s ease;
+}
+
+
+/* BOTÃO */
+.botao-neon {
+    position: absolute;
+    bottom: 30px;
+    right: 30px; /* Começa no canto inferior direito */
+    padding: 12px 30px;
+    border: 2px solid #87CEEB;
+    background-color: transparent;
+    color: #87CEEB;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px #87CEEB66;
+}
+
+.botao-neon:hover {
+    background-color: #87CEEB22;
+    box-shadow: 0 0 20px #87CEEBaa, 0 0 40px #87CEEBaa;
+    color: white;
+}
+
+/* Quando ativar */
+.sobre.ativo .imagem-sobre {
+    transform: translateX(100%);
+    border-radius: 0 20px 20px 0;
+}
+
+.sobre.ativo .conteudo-inicial {
+    display: none;
+}
+
+.sobre.ativo .cards-equipe {
+    display: flex;
+    opacity: 1;
+}
+
+/* Botão na esquerda quando ativo */
+.sobre.ativo .botao-neon {
+    right: auto;
+    left: 30px;
+}
+
+/* Estado ativo */
+.sobre.ativo .imagem-sobre {
+    transform: translateX(100%);
+    border-radius: 0 20px 20px 0;
+}
+
+.sobre.ativo .conteudo-inicial {
+    display: none;
+}
+
+.sobre.ativo .cards-equipe {
+    display: flex;
+    opacity: 1;
+}
+
+/* Seção principal */
+/* Seção geral */
+#projects {
+    background-image: url('assets/153681.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  /* Degradê escuro */
+  #projects .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(11, 12, 16, 0.8) 0%,
+      rgba(11, 12, 16, 0.3) 50%,
+      rgba(11, 12, 16, 0.8) 100%
+    );
+    z-index: 1;
+  }
+  
+  /* Container com efeito vidro */
+  .glass-container {
+    position: relative;
+    width: 80%;
+    height: 70%;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+    z-index: 2;
+    overflow: hidden;
+  }
+  
+  /* Área do slider */
+  .slider-wrapper {
+    display: flex;
+    width: 200%;
+    height: 100%;
+    transition: transform 0.8s ease;
+  }
+  
+  /* Cada slide */
+  .slide {
+    min-width: 50%;
+    height: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Botão no canto inferior esquerdo */
+  .button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: rgba(135, 206, 250, 0.2);
+    border: 1px solid rgba(135, 206, 250, 0.7);
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  /* Efeito no hover */
+  .button:hover {
+    background-color: rgba(135, 206, 250, 0.4);
+    border-color: rgba(135, 206, 250, 1);
+  }
+  
+  /* Checkbox escondido */
+  #toggle-slide {
+    display: none;
+  }
+  
+  /* Quando clica no botão (toggle), desliza */
+  #toggle-slide:checked ~ .glass-container .slider-wrapper {
+    transform: translateX(-50%);
+  }
+
+  .container-about {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  
+  .left-content h1 {
+    font-size: 60px;
+    font-family: "Oswald", sans-serif;
+    color: #ffffff;
+  }
+  
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .round-image {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #777; /* Caso não carregue imagem */
+  }
+  
+  .right-content {
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .right-content p {
+    font-size: 18px;
+    color: #929191;
+    margin-bottom: 20px;
+  }
+  
+  .btn-about {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0B0C10;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 15px;
+    transition: background 0.3s;
+  }
+  
+  .btn-about:hover {
+    background-color: #333;
+  }
+  
+  .partner {
+    font-size: 16px;
+    color: #777;
+  }
+  
+
+#icons {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.social-buttons a img {
+  width: 35px; /* Aumenta o tamanho da imagem */
+  height: 35px; /* Mantém a imagem proporcional */
+  object-fit: cover; /* Garante que a imagem não deforme */
+  border-radius: 50%; /* Deixa as imagens redondas */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.social-buttons a img:hover {
+  transform: scale(1.2); /* Efeito ao passar o mouse */
+}

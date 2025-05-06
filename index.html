@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUMEN</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="main-header">
+        <div class="container">
+          <nav class="nav-links">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#projects">PROJECTS</a>
+          </nav>
+        </div>
+    </header>
+    <section id="home">
+        <div class="overlay"></div>
+        <div class="title">
+          <h1>LUMEN</h1>
+          <p class="slogan">
+            iluminando ideias, impulsionando inovação
+          </p>
+        </div>
+    </section>
+    <section id="about">
+        <div class="sobre">
+            <img src="assets/39655.jpg" alt="Imagem sobre nós" class="imagem-sobre">
+            
+            <div class="lado-direito">
+                <div class="conteudo-inicial">
+                    <h1>Sua visão, nossa luz</h1>
+                    <p>Na Lumen, acreditamos que a inovação é a luz que guia o futuro.
+                    Somos uma equipe apaixonada por criar soluções que conectam pessoas, ideias e tecnologia de maneira inteligente e humana.
+                    Nascemos do desejo de transformar desafios em oportunidades, sempre com criatividade, ética e excelência em tudo o que fazemos.
+                    Cada projeto é uma nova chance de iluminar caminhos, impulsionar mudanças e construir um amanhã mais brilhante.
+                    Na Lumen, não apenas desenvolvemos soluções — acendemos possibilidades.</p>
+                </div>
+    
+                <div class="cards-equipe" style="display: none;">
+                    <div class="card">
+                        <h2>Nome 1</h2>
+                        <p>Função</p>
+                    </div>
+                    <div class="card">
+                        <h2>Nome 2</h2>
+                        <p>Função</p>
+                    </div>
+                    <div class="card">
+                        <h2>Nome 3</h2>
+                        <p>Função</p>
+                    </div>
+                </div>
+            </div>
+    
+            <button class="botao-neon" onclick="alternarConteudo()">Conheça a Equipe</button> 
+        </div>
+    </section>
+
+    <section id="projects">
+        <input type="checkbox" id="toggle-slide">
+        
+        <div class="overlay"></div>
+      
+        <div class="glass-container">
+          <div class="slider-wrapper">
+            
+            <div class="slide slide1">
+                <div class="container-about">
+                    <div class="left-content">
+                      <h1>RACEPCE</h1>
+                    </div>
+                
+                    <div class="center-content">
+                      <img src="assets/pitch.png" alt="Imagem do projeto" class="round-image">
+                    </div>
+                
+                    <div class="right-content">
+                      <p>O projeto da Mahindra visa popularizar a Fórmula E, tornando o esporte mais acessível e atraente para novos fãs. Através de uma plataforma digital inovadora, oferecemos conteúdo exclusivo, informações sobre corridas e interação direta com o público, ampliando o alcance e o engajamento da Fórmula E no cenário global.</p>
+                      <a href="https://fast-pace-nine.vercel.app/" target="_blank" class="btn-about">CONHEÇA MAIS</a>
+                      <p class="partner">Parceiro: <strong>GRANDE PRÊMIO</strong></p>
+                    </div>
+                </div>
+            </div>
+      
+            <div class="slide slide2">
+                <div class="container-about">
+                    <div class="left-content">
+                      <h1>*****</h1>
+                    </div>
+                
+                    <div class="center-content">
+                      <img src="#" alt="Imagem do projeto" class="round-image">
+                    </div>
+                
+                    <div class="right-content">
+                      <p>---</p>
+                      <a href="#" target="_blank" class="btn-about">CONHEÇA MAIS</a>
+                      <p class="partner">Parceiro: <strong>---</strong></p>
+                    </div>
+                </div>
+            </div>
+      
+          </div>
+      
+          <label for="toggle-slide" class="button">>>></label>
+        </div>
+      </section>
+      
+    <section id="icons">
+        <nav class="social-buttons">
+          <a href="#" target="_blank"><img src="assets/insta.png" alt=""></a>
+          <a href="#" target="_blank"><img src="assets/git.png" alt=""></a>
+          <a href="mailto:lumen.astra7@gmail.com"><img src="assets/email.png" alt=""></a>
+        </nav>
+    </section>
+    <script>
+        function alternarConteudo() {
+            const sobre = document.querySelector('.sobre');
+            const botao = document.querySelector('.botao-neon');
+        
+            sobre.classList.toggle('ativo');
+        
+            if (sobre.classList.contains('ativo')) {
+                botao.innerText = 'Conheça a Lumen';
+            } else {
+                botao.innerText = 'Conheça a Equipe';
+            }
+        }
+    </script>
+        
+</body>
+</html>
