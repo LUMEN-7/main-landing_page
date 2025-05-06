@@ -120,15 +120,33 @@ body {
 }
 
 .sobre {
-    display: flex;
-    width: 80%;
-    height: 80vh;
-    background: rgba(255, 255, 255, 0.057);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    transition: all 0.8s ease;
+  display: flex;
+  position: relative;
+  width: 80%;
+  height: 80vh;
+  background: rgba(255, 255, 255, 0.057);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.imagem-sobre {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  transition: transform 0.8s ease;
+  z-index: 1;
+}
+
+/* Quando ativo, move a imagem para a direita */
+.sobre.ativo .imagem-sobre {
+  transform: translateX(50%);
+  border-radius: 0 20px 20px 0;
 }
 
 .sobre h1{
@@ -141,17 +159,10 @@ body {
     font-size: large;
 }
 
-.imagem-sobre {
+.lado-direito,
+.lado-esquerdo {
     width: 50%;
-    height: 100%;
-    object-fit: cover;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    transition: all 0.8s ease;
-}
-
-.lado-direito {
-    width: 50%;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -159,21 +170,30 @@ body {
     padding: 30px;
     text-align: center;
     color: white;
-    position: relative;
-    overflow: hidden;
 }
 
-.conteudo-inicial, .cards-equipe {
-    width: 100%;
-    transition: opacity 0.5s ease;
+/* lado-esquerdo oculto inicialmente */
+.lado-esquerdo {
+    display: none;
 }
 
+/* Quando ativo, troca os textos */
+.sobre.ativo .lado-esquerdo {
+    display: flex;
+}
 
-/* BOTÃO */
+.sobre .lado-direito{
+  margin-left: 40vw;
+}
+
+.sobre.ativo .lado-direito {
+    display: none;
+}
+
 .botao-neon {
     position: absolute;
     bottom: 30px;
-    right: 30px; /* Começa no canto inferior direito */
+    right: 30px; 
     padding: 12px 30px;
     border: 2px solid #87CEEB;
     background-color: transparent;
@@ -194,7 +214,6 @@ body {
     color: white;
 }
 
-/* Quando ativar */
 .sobre.ativo .imagem-sobre {
     transform: translateX(100%);
     border-radius: 0 20px 20px 0;
@@ -204,31 +223,16 @@ body {
     display: none;
 }
 
-.sobre.ativo .cards-equipe {
-    display: flex;
-    opacity: 1;
-}
-
-/* Botão na esquerda quando ativo */
 .sobre.ativo .botao-neon {
     right: auto;
     left: 30px;
 }
 
-/* Estado ativo */
 .sobre.ativo .imagem-sobre {
     transform: translateX(100%);
     border-radius: 0 20px 20px 0;
 }
 
-.sobre.ativo .conteudo-inicial {
-    display: none;
-}
-
-.sobre.ativo .cards-equipe {
-    display: flex;
-    opacity: 1;
-}
 
 /* Seção principal */
 /* Seção geral */
