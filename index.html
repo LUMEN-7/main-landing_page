@@ -45,7 +45,100 @@
       
         <div class="lado-esquerdo">
           <h1>Equipe Lumen</h1>
-          <p>Conheça nosso time de criadores, inovadores e sonhadores que fazem a Lumen acontecer.</p>
+          <div class="time">
+            <div class="container">
+                <div class="card" onclick="toggleContent(this)">
+                    <div class="contentBx">
+                        <h2>Murilo</h2>
+                        <p>PO</p>
+                    </div>
+                    <div class="imgBx">
+                        <img src="assets/muri4.png" alt="Murilo">
+                    </div>
+                    <div class="links">
+                        <a href="https://www.linkedin.com/in/murilocordeirof/" target="_blank">
+                            <img src="assets/din.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.instagram.com/muh_ngp/" target="_blank">
+                            <img src="assets/insta.png" alt="Instagram">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card" onclick="toggleContent(this)">
+                    <div class="contentBx">
+                        <h2>Ianny</h2>
+                        <p>Marketing</p>
+                    </div>
+                    <div class="imgBx">
+                        <img src="assets/ianny.jpeg" alt="Ianny">
+                    </div>
+                    <div class="links">
+                        <a href="https://www.linkedin.com/in/iannyraquel/" target="_blank">
+                            <img src="assets/din.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.instagram.com/iannyrfs/" target="_blank">
+                            <img src="assets/insta.png" alt="Instagram">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card" onclick="toggleContent(this)">
+                    <div class="contentBx">
+                        <h2>Lana</h2>
+                        <p>Scrum Master</p>
+                    </div>
+                    <div class="imgBx">
+                        <img src="assets/Lana.jpeg" alt="Ana Laura">
+                    </div>
+                    <div class="links">
+                        <a href="https://www.linkedin.com/in/ana-laura-torres-loureiro-b85ba1298" target="_blank">
+                            <img src="assets/din.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.instagram.com/_lana.007_/" target="_blank">
+                            <img src="assets/insta.png" alt="Instagram">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card" onclick="toggleContent(this)">
+                    <div class="contentBx">
+                        <h2>Gêronimo</h2>
+                        <p>Suporte</p>
+                    </div>
+                    <div class="imgBx">
+                        <img src="assets/GG.jpeg" alt="GG">
+                    </div>
+                    <div class="links">
+                        <a href="https://www.linkedin.com/in/geronimo-augusto-99643a2b8/" target="_blank">
+                            <img src="assets/din.png" alt="LinkedIn">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card" onclick="toggleContent(this)">
+                    <div class="contentBx">
+                        <h2>Vitor</h2>
+                        <p>QA</p>
+                    </div>
+                    <div class="imgBx">
+                        <img src="assets/muri4.png" alt="Vitor">
+                    </div>
+                    <div class="links">
+                        <a href="https://www.linkedin.com/in/vitor-augusto-4bb6a72b7/" target="_blank">
+                            <img src="assets/din.png" alt="LinkedIn">
+                        </a>
+                        <a href="https://www.instagram.com/6vitor.9/" target="_blank">
+                            <img src="assets/insta.png" alt="Instagram">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
           <button class="botao-neon" onclick="alternarConteudo()">Conheça a Lumen</button>
         </div>
       </div>
@@ -70,7 +163,7 @@
                     </div>
                 
                     <div class="right-content">
-                      <p>O projeto da Mahindra visa popularizar a Fórmula E, tornando o esporte mais acessível e atraente para novos fãs. Através de uma plataforma digital inovadora, oferecemos conteúdo exclusivo, informações sobre corridas e interação direta com o público, ampliando o alcance e o engajamento da Fórmula E no cenário global.</p>
+                      <p>O projeto da <strong>Mahindra</strong> visa popularizar a Fórmula E, tornando o esporte mais acessível e atraente para novos fãs. Através de uma plataforma digital inovadora, oferecemos conteúdo exclusivo, informações sobre corridas e interação direta com o público, ampliando o alcance e o engajamento da Fórmula E no cenário global.</p>
                       <a href="https://fast-pace-nine.vercel.app/" target="_blank" class="btn-about">CONHEÇA MAIS</a>
                       <p class="partner">Parceiro: <strong>GRANDE PRÊMIO</strong></p>
                     </div>
@@ -104,7 +197,7 @@
     <section id="icons">
         <nav class="social-buttons">
           <a href="#" target="_blank"><img src="assets/insta.png" alt=""></a>
-          <a href="#" target="_blank"><img src="assets/git.png" alt=""></a>
+          <a href="https://github.com/LUMEN-7" target="_blank"><img src="assets/git.png" alt=""></a>
           <a href="mailto:lumen.astra7@gmail.com"><img src="assets/email.png" alt=""></a>
         </nav>
     </section>
@@ -120,6 +213,9 @@
             } else {
                 botao.innerText = 'Conheça a Equipe';
             }
+        }
+        function toggleContent(card) {
+          card.classList.toggle('active');
         }
     </script>
         
